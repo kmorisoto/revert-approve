@@ -2,13 +2,14 @@ name: revert-approve
 
 on:
   pull_request:
-    branches:
-      - "revert-**"
+    types:
+      - opened
 
   workflow_dispatch:
 
 jobs:
-  build:
+  approve:
+    if:  startsWith(github.head_ref, 'revert-**')
     runs-on: ubuntu-latest
 
     steps:

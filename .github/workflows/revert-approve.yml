@@ -9,7 +9,7 @@ on:
 
 jobs:
   approve:
-    if:  startsWith(github.head_ref, 'revert-**')
+    if:  startsWith(github.head_ref, 'revert-')
     runs-on: ubuntu-latest
 
     steps:

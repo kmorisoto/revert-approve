@@ -17,6 +17,7 @@ jobs:
 
       - name: Run a one-line script
         run: |
-          gh pr review --approve
+          gh pr review $PR_NUMBER --approve
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}

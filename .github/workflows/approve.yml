@@ -1,0 +1,18 @@
+name: approve
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number: 
+        description: 'Pull Request Number'
+        required: true
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: approve
+        run: |
+          gh pr review ${{ inputs.pr_number }} --approve
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

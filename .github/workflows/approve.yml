@@ -14,6 +14,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: approve
         run: |
-          gh pr review ${{ inputs.pr_number }} --approve
+          gh pr review ${{ inputs.pr_number }} --approve --body  'aaaaa'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
